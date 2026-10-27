@@ -1,0 +1,14 @@
+name: Inspector
+on: 
+  push: 
+jobs: 
+  job1:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: print runner's kernel
+        shell: bash
+        run: uname -r
+      - name: list contents
+        run: echo "There are $(ls -l |wc -l) files present" 
